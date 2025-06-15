@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Surat Cinta untuk Pahlawan Hidup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fef9f4;
+      color: #333;
+      padding: 40px;
+    }
+    h1 {
+      color: #cc2f2f;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #cc2f2f;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a82424;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💌 Surat Cinta untuk Pahlawan Hidup 💌</h1>
+
+  <form id="suratForm">
+    <label for="nama">Nama Saya:</label>
+    <input type="text" id="nama" name="nama" required />
+
+    <label for="penerima">Untuk (Ayah/Ibu/Keduanya):</label>
+    <input type="text" id="penerima" name="penerima" required />
+
+    <label for="isi">Isi Surat:</label>
+    <textarea id="isi" name="isi" rows="6" required></textarea>
+
+    <label for="cita">Cita-cita Saya:</label>
+    <input type="text" id="cita" name="cita" required />
+
+    <button type="submit">Kirim Surat</button>
+  </form>
+
+  <div id="hasil" style="margin-top: 40px;"></div>
+
+  <script>
+    document.getElementById("suratForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const penerima = document.getElementById("penerima").value;
+      const isi = document.getElementById("isi").value;
+      const cita = document.getElementById("cita").value;
+
+      const hasil = `
+        <h2>📬 Surat Terkirim!</h2>
+        <p><strong>Dari:</strong> ${nama}</p>
+        <p><strong>Untuk:</strong> ${penerima}</p>
+        <p><strong>Isi Surat:</strong></p>
+        <p>${isi}</p>
+        <p><strong>Cita-cita Saya:</strong> ${cita}</p>
+      `;
+      document.getElementById("hasil").innerHTML = hasil;
+    });
+  </script>
+
+</body>
+</html>
